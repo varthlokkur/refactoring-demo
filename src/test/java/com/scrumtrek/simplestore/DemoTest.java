@@ -9,5 +9,6 @@ public class DemoTest {
     public void movieShouldSaveTitleWhenNotEmpty() {
         Movie sut = new Movie("test title", PriceCodes.Regular);
         assertEquals("test title", sut.getTitle());
+        assertEquals(PriceCodes.Regular, sut.getPriceCode());
     }
 }
