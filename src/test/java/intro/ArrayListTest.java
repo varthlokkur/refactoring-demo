@@ -1,10 +1,15 @@
 package intro;
 
+import org.hamcrest.Matcher;
+import org.hamcrest.core.IsCollectionContaining;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assume.assumeTrue;
 
@@ -15,8 +20,7 @@ import static org.junit.Assume.assumeTrue;
  */
 public class ArrayListTest { //SUT = ArrayList
     @Test(timeout = 5_000)
-    public void
-    itShouldSizeIncrementedAddedWhenDoAddElement() { //BDD: Domain Lang
+    public void itShouldSizeIncrementedAddedWhenDoAddElement() { //BDD: Domain Lang
         //region Fixture | Arrange | Given
         ArrayList<Object> sut = new ArrayList<>();
         Object dummy = new Object();
@@ -31,18 +35,14 @@ public class ArrayListTest { //SUT = ArrayList
         /**
          * AssertionError | Failure
          */
-        assertEquals(1, sut.size());
-        assertTrue("".contains(""));
 
-        String s1 = new String("a");
-        String s2 = "a";
-        System.out.println(s1.equals("a"));
+        assertThat(sut, IsCollectionContaining.hasItem(1)); //CoreMatchers
         //endregion
     }
 
-//    @Test(expected = NullPointerException.class)
-//    public void itShouldGetErrorWhenSutIsNull() {
-//        ArrayList sut = null;
-//        sut.add("");
-//    }
+    @Test(expected = NullPointerException.class)
+    public void itShouldGetErrorWhenSutIsNull() {
+        ArrayList sut = null;
+        sut.add("");
+    }
 }
