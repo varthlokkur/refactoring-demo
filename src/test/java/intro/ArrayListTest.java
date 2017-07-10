@@ -1,16 +1,10 @@
 package intro;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.core.IsCollectionContaining;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static junit.framework.TestCase.assertTrue;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsCollectionContaining.hasItem;
-import static org.junit.Assert.assertEquals;
+import static org.fest.assertions.api.Assertions.assertThat;
 import static org.junit.Assume.assumeTrue;
 
 /**
@@ -36,7 +30,8 @@ public class ArrayListTest { //SUT = ArrayList
          * AssertionError | Failure
          */
 
-        assertThat(sut, IsCollectionContaining.hasItem(1)); //CoreMatchers
+        assertThat(sut.size()).isEqualTo(1);
+        assertThat(sut).doesNotContain(2).doesNotContain(1);
         //endregion
     }
 
