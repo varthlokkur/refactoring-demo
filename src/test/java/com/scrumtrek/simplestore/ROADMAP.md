@@ -2,3 +2,11 @@
 ## DoD
 – Branch coverage ≥ 50%
 - Mutation coverage ≥ 80%
+
+# Practice 02: Unit Test coverage
+## DoD
+- @Ignore _system tests_
+- Refactor to DI (without extract interface)
+- Cover with _unit tests_ selected scope
+- Branch coverage (_unit_) ≥ 40%
+- Mutation coverage ≥ 60%

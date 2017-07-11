@@ -1,6 +1,15 @@
 package intro;
 
+import com.scrumtrek.simplestore.Rental;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 
@@ -13,11 +22,20 @@ import static org.mockito.Mockito.*;
  * Test Case: class
  * Test, Test scenario: method
  */
+@Ignore
+@RunWith(MockitoJUnitRunner.class)
 public class ArrayListTest { //SUT = ArrayList
+    private ArrayList<Object> sut;
+    @InjectMocks private Rental my;
+
+    @Before
+    public void setUp() {
+        sut = new ArrayList<>();
+    }
+
     @Test(timeout = 5_000)
     public void itShouldSizeIncrementedAddedWhenDoAddElement() { //BDD: Domain Lang
         //region Fixture | Arrange | Given
-        ArrayList<Object> sut = new ArrayList<>();
         Object dummy = new Object();
         assumeTrue(sut.size() == 0); //Pending | Ignored
         //endregion
@@ -66,6 +84,16 @@ public class ArrayListTest { //SUT = ArrayList
         verify(mock, times(2))
                 .toString();
 //                .toString(anyString());
+    }
+
+    @Test
+    public void test() {
+        new RentalBuilder()
+                .withMoviewName()
+                .withPriceCode()
+                .withDaysRented()
+                .withPreGeneratedCollection()
+            .build();
     }
 
 }
