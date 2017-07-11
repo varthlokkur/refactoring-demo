@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.junit.Assume.assumeTrue;
+import static org.mockito.Mockito.*;
 
 /**
  * SUT: system under test
@@ -29,7 +30,6 @@ public class ArrayListTest { //SUT = ArrayList
         /**
          * AssertionError | Failure
          */
-
         assertThat(sut.size()).isEqualTo(1);
         assertThat(sut).doesNotContain(2).doesNotContain(1);
         //endregion
@@ -40,4 +40,32 @@ public class ArrayListTest { //SUT = ArrayList
         ArrayList sut = null;
         sut.add("");
     }
+
+    @Test
+    public void shouldUseElementsToStringWhenToString() {
+        ArrayList<Object> sut = new ArrayList<>();
+        Object stub = mock(Object.class);
+        when(stub.toString())
+                .thenReturn("test string")
+                .thenReturn("test string");
+        sut.add(stub);
+
+        String result = sut.toString();
+
+        assertThat(result).contains("test string");
+    }
+
+    @Test
+    public void shouldCallElementsToStringWhenToString() {
+        ArrayList<Object> sut = new ArrayList<>();
+        Object mock = mock(Object.class);
+        sut.add(mock);
+
+        sut.toString();
+
+        verify(mock, times(2))
+                .toString();
+//                .toString(anyString());
+    }
+
 }
