@@ -10,3 +10,6 @@
 - Cover with _unit tests_ selected scope
 - Branch coverage (_unit_) ≥ 40%
 - Mutation coverage ≥ 60%
+
+# Reading
+http://tinyurl.com/skilltrekreadinglist
