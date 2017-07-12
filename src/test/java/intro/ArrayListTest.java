@@ -88,12 +88,12 @@ public class ArrayListTest { //SUT = ArrayList
 
     @Test
     public void test() {
-        new RentalBuilder()
-                .withMoviewName()
-                .withPriceCode()
-                .withDaysRented()
-                .withPreGeneratedCollection()
-            .build();
+//        new RentalBuilder()
+//                .withMoviewName()
+//                .withPriceCode()
+//                .withDaysRented()
+//                .withPreGeneratedCollection()
+//            .build();
     }
 
 }

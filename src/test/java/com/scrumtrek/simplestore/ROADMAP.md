@@ -13,3 +13,4 @@
 
 # Reading
 http://tinyurl.com/skilltrekreadinglist
+ekr@bk.ru, Евгений Кривошеев

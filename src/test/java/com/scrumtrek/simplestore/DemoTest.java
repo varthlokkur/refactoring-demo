@@ -11,4 +11,12 @@ public class DemoTest {
         assertEquals("test title", sut.getTitle());
         assertEquals(PriceCodes.Regular, sut.getPriceCode());
     }
+
+    @Test
+    public void rentalShouldContainsMovieWhenCreated() {
+        Movie testMovie = new Movie("test movie", PriceCodes.Regular);
+        Rental sutRental = new Rental(testMovie, 5);
+
+        assertEquals(testMovie, sutRental.getMovie());
+    }
 }

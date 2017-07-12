@@ -1,20 +1,22 @@
 package com.scrumtrek.simplestore;
 
 public class Rental {
-	private Movie m_Movie;
-	private int m_DaysRented;
+	private Movie movie;
 
-	public Rental(Movie movie, int daysRented) {
-		m_Movie = movie;
-		m_DaysRented = daysRented;
-	}
-
-	public int getDaysRented() {
-		return m_DaysRented;
+	public Rental(Movie testMovie, int i) {
+		this.movie = testMovie;
 	}
 
 	public Movie getMovie() {
-		return m_Movie;
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+
+	public int getDaysRented() {
+		return 0;
 	}
 }
 
